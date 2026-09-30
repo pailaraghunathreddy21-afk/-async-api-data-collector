@@ -35,10 +35,17 @@
                 <p class="success">Data Available</p>
             </div>
 
+                </section>
+
+        <section class="actions">
+
+            <a href="{{ url_for('collect_data') }}" class="collect-button">
+                Collect Data
+            </a>
+
         </section>
 
         <section class="data-section">
-
             <h2>Collected Data</h2>
 
             {% if data %}

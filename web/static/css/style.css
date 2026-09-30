@@ -106,3 +106,25 @@ tr:hover {
         min-width: 700px;
     }
 }
+
+.actions {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.collect-button {
+    display: inline-block;
+    background: #1f2937;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.collect-button:hover {
+    background: #374151;
+}
+
