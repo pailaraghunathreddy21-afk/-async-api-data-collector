@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Async API Data Collector</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Async API Data Collector</h1>
+        <p>REST API Data Collection Dashboard</p>
+    </header>
+
+    <main>
+
+        <section class="stats">
+
+            <div class="card">
+                <h2>Total Records</h2>
+                <p>{{ total_records }}</p>
+            </div>
+
+            <div class="card">
+                <h2>Unique Records</h2>
+                <p>{{ unique_records }}</p>
+            </div>
+
+            <div class="card">
+                <h2>Status</h2>
+                <p class="success">Data Available</p>
+            </div>
+
+        </section>
+
+        <section class="data-section">
+
+            <h2>Collected Data</h2>
+
+            {% if data %}
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User ID</th>
+                        <th>Title</th>
+                        <th>Body</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for item in data %}
+
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.userId }}</td>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.body }}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% else %}
+
+            <p>No data available.</p>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+</body>
+</html>
